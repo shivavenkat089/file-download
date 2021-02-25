@@ -1,38 +1,144 @@
-.App {
-  text-align: center;
+html,
+body {
+  background: #252535;
+  font-family: 'Lobster', cursive;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  width: 100vw;
+  height: 100vh;
+  background: #292929;
   color: white;
+  padding: 5% 2%;
+}
+.left-container,
+.right-container {
+  flex: 1;
+}
+.heading {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+.item {
+  margin-bottom: 7px;
+  font-size: 18px;
+  color: #a9a9a9;
+}
+.item span:first-child {
+  margin-right: 15px;
+}
+.right-container {
+  padding: 15px;
+  background: #383838;
+  box-shadow: #191919 0px 11px 18px -2px;
+  position: fixed;
+  width: 500px;
+  top: 30px;
+  right: 30px;
+}
+.navigations {
+  display: flex;
+  margin-bottom: 10px;
+}
+.dropdown-header,
+.search-header {
+  flex: 1;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+.dropdown-header {
+  margin-right: 10px;
+}
+.navigations select,
+.navigations input {
+  background: transparent;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+.navigations select {
+  width: 95%;
+  color: #bcbcbc;
+}
+.navigations input::placeholder {
+  color: #bcbcbc;
+}
+.progressive-bar {
+  padding: 10px;
+  box-shadow: #292928 -2px 1px 15px -2px;
+  z-index: 999;
+  border-bottom: 2px solid #292928;
+  color: #bcbcbc;
+  min-height: 78px;
+}
+.progressive-bar:last-child {
+  border-bottom: none;
+  box-shadow: #292928 -2px 9px 15px -2px;
+}
+.progress-header {
+  font-size: 15px;
+}
+.progress-status-text {
+  font-size: 12px;
+}
+.progress-status {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-top: 6px;
+}
+.progress-status-controls {
+  color: #a87be0;
+  font-size: 13px;
+}
+.progressive-bar progress {
+  width: 90%;
+  height: 4px;
+  color: #a87be0;
+}
+progress::-webkit-progress-value {
+  background-color: #a87be0;
+}
+/* background: */
+progress::-webkit-progress-bar {
+  background-color: white;
+  width: 100%;
+}
+progress {
+  background-color: white;
+  border-radius: 4px;
 }
 
-.App-link {
-  color: #61dafb;
+/* value: */
+progress::-webkit-progress-value {
+  background-color: #a87be0 !important;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+progress::-moz-progress-bar {
+  background-color: #a87be0 !important;
+}
+progress {
+  color: #a87be0;
+}
+.footer-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 14px;
+  color: #bcbcbc;
+  align-items: center;
+  color: #a87be0;
+  font-size: 13px;
+}
+.footer-container img {
+  width: 20px;
+  margin-right: 10px;
+}
+.progress-status-controls span {
+  margin: 0px 5px;
 }
