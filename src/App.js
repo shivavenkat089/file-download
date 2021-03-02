@@ -1,23 +1,24 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import downloadImage from './download.png';
 import ProgressConponent from './progress-bar-component.jsx';
+import { connect } from 'react-redux';
 import './App.css';
 
-function App() {
-  const data = {
-    files: [
-      {
-        heading: 'Downloading Wireframe Mesh',
-        totalSize: 12,
-        downloaded: 8,
-      },
-      {
-        heading: 'Downloading Wireframe Mesh',
-        totalSize: 24,
-        downloaded: 18,
-      },
-    ],
-  };
+function App(props) {
+  const {files, updateData} = props;
+  // console.log(props);
+  useEffect(() => {
+    const handleFetch = async () => {
+      let response = await fetch('http://localhost:9000/');
+      response = await response.json();
+      const action = {
+        type: "setFiles",
+        payload: response.files
+      }
+      updateData(action);
+    }
+    handleFetch();
+  }, []);
   return (
     <div className="parent-container">
       <div className="right-container">
@@ -33,7 +34,7 @@ function App() {
           </div>
         </div>
         <div className="progressive-bars-containers">
-          {data.files.map((file, index) => (
+          {files.map((file, index) => (
             <ProgressConponent data={file} key={`file-${index}`} />
           ))}
           <div className="progressive-bar">
@@ -51,4 +52,13 @@ function App() {
   );
 }
 
-export default App;
+// export default App;
+
+const mapStateToProps = (state) => {
+  return { files: state.files } 
+}
+const mapDispatchToProps = (dispatch) => ({
+  updateData: (action) => dispatch(action),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
