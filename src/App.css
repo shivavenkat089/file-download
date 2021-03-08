@@ -1,4 +1,4 @@
-html,
+/* html,
 body {
   background: #252535;
   font-family: 'Lobster', cursive;
@@ -106,7 +106,6 @@ body {
 progress::-webkit-progress-value {
   background-color: #a87be0;
 }
-/* background: */
 progress::-webkit-progress-bar {
   background-color: white;
   width: 100%;
@@ -116,7 +115,6 @@ progress {
   border-radius: 4px;
 }
 
-/* value: */
 progress::-webkit-progress-value {
   background-color: #a87be0 !important;
 }
@@ -141,4 +139,4 @@ progress {
 }
 .progress-status-controls span {
   margin: 0px 5px;
-}
+} */
