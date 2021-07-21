@@ -71,7 +71,7 @@ const useStyles = makeStyles({
     },
     '&::-webkit-progress-bar': {
       backgroundColor: 'white',
-      width: 100,
+      width: "100%",
     },
   },
   btn: {
